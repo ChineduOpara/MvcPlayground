@@ -1,0 +1,96 @@
+@using MvcPlayground.Models.Framework
+@using MvcPlayground.Models.User;
+
+@{
+    var model = (List<Customer>)Model;
+}
+
+<div class="page-header clearfix">
+    <h1 class="pull-left">
+        <span>Customers</span>
+    </h1>
+
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box clearfix">
+            <div class="box-header">
+                Customer List
+            </div>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="col-checkbox">
+                            <input type="checkbox" /></th>
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Address</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var customer in model)
+                    {
+                    <tr>                        
+                        <td>
+                            <input type="checkbox" /></td>
+                        <td>
+                            @Html.ActionLink(customer.Name, "Details", "Customer", new { Id = customer.Id }, null)
+                        </td>
+                        <td>@customer.CompanyName</td>
+                        <td>@customer.Street<br />
+                            @customer.City, @customer.State @customer.Zip
+                        </td>
+                        <td>@customer.Phone</td>
+                        <td>@customer.Email</td>
+                        <td>
+                            <a href="#myModal" role="button" data-toggle="modal" title="Order History" class="btn btn-info"><i class="icon-book"></i></a>
+                            <a href="javascript:void(0)" title="Order Notes" class="btn btn-info"><i class="icon-file-alt"></i></a>
+
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Orders</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a href="/esp/#/orders/654313" class="ng-binding">654313</a></td>
+                            <td class="ng-binding">Purchase Order</td>
+                            <td class="ng-binding">open</td>
+                            <td class="ng-binding">$350</td>
+                            <td class="ng-binding">9/6/2011 1:55:17 PM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

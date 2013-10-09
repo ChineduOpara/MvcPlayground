@@ -12,25 +12,19 @@ namespace MvcPlayground.Controllers
     {
         public Application Application
         {
-            get
-            {
-                return ViewBag.Application as Application;
-            }
+            get { return ViewBag.Application as Application; }
         }
 
         public Page Page
         {
-            get
-            {
-                return ViewBag.Page as Page;
-            }
+            get { return ViewBag.Page as Page; }
         }
 
         public new ViewResult View()
         {
             if (Page.Layout != null)
             {
-                return base.View(Page.Layout.Source, Page.Layout);
+                return base.View(Page.Layout.PartialViewUrl, Page.Layout);
             }
             else
             {
@@ -38,11 +32,11 @@ namespace MvcPlayground.Controllers
             }
         }
 
-        public void SetupModuleModel<T>(string name, T model)
+        public void SetModuleModel<T>(string moduleName, T model)
         {
             if (Page != null)
             {
-                var container = Page.FindContainerByModuleName(name);
+                var container = Page[moduleName];
                 if (container != null)
                 {
                     var containerWithModel = new ModuleContainer<T>(container) { Entity = model };

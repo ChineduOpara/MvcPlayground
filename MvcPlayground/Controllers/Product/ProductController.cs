@@ -9,15 +9,20 @@ namespace MvcPlayground.Controllers.Product
 {
     public class ProductController : CitkaController
     {
-        public ViewResult Index(int id)
+        public ViewResult Index()
         {
-            var model = DataManager.GetProduct(id);
-            SetupModuleModel("ProductDetail", model);
-            SetupModuleModel("ProductOfTheDay", model);
             return View();
         }
 
-        [ActionName("search")]
+        public ViewResult Details(int id)
+        {
+            DataManager data = new DataManager();
+            var model = data.Products.Where(x => x.ProductId == id).FirstOrDefault();
+            SetModuleModel("ProductDetail", model);
+            SetModuleModel("ProductOfTheDay", model);
+            return View();            
+        }
+
         public ViewResult Search(string query)
         {
             return View();

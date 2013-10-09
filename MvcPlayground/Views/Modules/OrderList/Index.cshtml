@@ -1,0 +1,47 @@
+@using MvcPlayground.Models.Framework
+@using MvcPlayground.Models.Order;
+
+@{
+    var model = (List<Order>)Model;
+}
+
+<div class="page-header clearfix">
+    <h1 class="pull-left">
+        <span>Orders</span>
+    </h1>
+
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box clearfix">
+            <div class="box-header">
+                Order Information
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var order in model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.ActionLink(order.Id.ToString(), "Detail", "Order", new { Id = order.Id }, null)
+                        </td>
+                        <td>@order.Type</td>
+                        <td>@order.Status</td>
+                        <td>@order.Amount.ToString("c")</td>
+                        <td>@order.Date.ToShortDateString()</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

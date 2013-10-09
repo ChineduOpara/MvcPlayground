@@ -10,7 +10,7 @@ using System.Web.WebPages;
 
 namespace MvcPlayground.Views
 {
-    public abstract class CitkaViewPage : WebViewPage<Layout>
+    public abstract class CitkaViewPage : WebViewPage<PageLayout>
     {
         public HelperResult RenderZone(string name)
         {
@@ -19,17 +19,18 @@ namespace MvcPlayground.Views
                 var zone = Model[name];
                 if (zone != null)
                 {
-                    foreach (var container in zone.Containers)
+                    foreach (var container in zone.ModuleContainers)
                     {
                         try
                         {
-                            writer.Write(Html.Partial(container.Instance.Module.ControlPath, container.RetrieveModel()).ToHtmlString());
+                            writer.Write(Html.Partial(container.ModuleInstance.Module.PartialViewUrl, container.GetModel()).ToHtmlString());
                         }
                         catch (Exception ex)
                         {
-                            if (File.Exists(this.NormalizePath(container.Instance.Module.ErrorControlPath)))
+                            string physicalPath = Server.MapPath(container.ModuleInstance.Module.ErrorViewUrl);
+                            if (File.Exists(physicalPath))
                             {
-                                writer.Write(Html.Partial(container.Instance.Module.ErrorControlPath, new ErrorViewModel { Exception = ex, Model = container.RetrieveModel() }).ToHtmlString());
+                                writer.Write(Html.Partial(container.ModuleInstance.Module.ErrorViewUrl, new ErrorViewModel { Exception = ex, Model = container.GetModel() }).ToHtmlString());
                             }
                         }
                     }
@@ -39,8 +40,7 @@ namespace MvcPlayground.Views
         }
     }
 
-    public abstract class CitkaViewPage<T> : CitkaViewPage
-        where T : Layout
+    public abstract class CitkaViewPage<T> : CitkaViewPage where T : PageLayout
     {
     }
 }

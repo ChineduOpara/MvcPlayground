@@ -5,10 +5,9 @@ using System.Web;
 
 namespace MvcPlayground.Models.Framework
 {
-    public class Zone
+    public class Zone : NamedEntity
     {
         public int LayoutId { get; set; }
-        public string Name { get; set; }
-        public ICollection<ModuleContainer> Containers { get; set; }
+        public ICollection<ModuleContainer> ModuleContainers { get; set; }
     }
 }

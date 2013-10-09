@@ -1,0 +1,1184 @@
+<div class="ad-wrapper clearfix">
+    <div class="ad-col">
+        <p>
+            <img src="http://www.iab.net/media/image/180x150_uap.gif" />
+        </p>
+        <p>
+            <img src="http://www.iab.net/media/image/180x150_uap.gif" />
+        </p>
+        <p>
+            <img src="http://www.iab.net/media/image/180x150_uap.gif" />
+        </p>
+    </div>
+    <div class="row">
+        <div class="prodResults">
+            <div class="left-col">
+                <div id="refinements">
+                    <div class="refinements">
+                        <div id="topBreadcrumbs" class="breadcrumbs">
+                            <div class="prodResultsCount">
+                                <div class="prodCount">
+                                    <span data-bind="text: numberWithCommas(ResultsTotal)">13,861</span>
+                                </div>
+                                <div class="supplierCount">
+                                    result<!-- ko if: ResultsTotal != 1 -->s<!-- /ko -->
+                                    from
+            <span data-bind="text: SuppliersTotal">566</span>
+                                    supplier<!-- ko if: SuppliersTotal != 1 -->s<!-- /ko -->
+
+                                </div>
+                                <div class="searchTerms hidden">
+                                    <!-- ko if: SearchedTerms.length > 0 -->
+                                    for
+                <!-- ko foreach: SearchedTerms -->
+                                    <strong>"<a href="#" data-bind="text: Term.Terms, attr: { 'onclick': 'RemoveSearch(\'' + Term.State + '\'); return false;' }" onclick="RemoveSearch('WordSearch|mug|3|'); return false;">mug</a>"
+                                    </strong>
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+                                    <!-- ko foreach: Filters -->
+                                    <!-- /ko -->
+                                    <!-- ko foreach: SelectedDimensions -->
+                                    <!-- /ko -->
+                                </div>
+                            </div>
+                        </div>
+                        <div data-bind="template: { name: 'sideBreadcrumbTemplate', data: ret }">
+                            <!-- ko if: SearchedTerms.length + Filters.length + SelectedDimensions.length + SelectedBoolDimensions.length > 0 -->
+                            <div class="borderBot pad10">
+                                <!-- ko foreach: Filters -->
+                                <!-- /ko -->
+                                <!-- ko if: SearchedTerms.length > 0 -->
+                                <div class="strong">Search Terms</div>
+                                <ul class="marginBot5" id="searchTermsContent">
+                                    <li data-bind="template: { name: 'wordSearchTemplate', foreach: SearchedTerms, as: 'Term' }">
+                                        <a href="#" class="SearchTerms" title="Remove Criteria" data-bind="attr: { 'onclick': 'RemoveSearch(\'' + Term.State + '\'); return false;' }" onclick="RemoveSearch('WordSearch|mug|3|'); return false;">
+                                            <!--- <input class="breadcrumck"  checked="checked" type="checkbox"> --->
+                                            <span class="ellipsis" data-bind="text: Term.Terms, attr: { 'title': Term.Terms }" title="mug">mug</span>
+                                            <i class="icon-remove" onclick="CheckInvoked(this)"></i>
+                                        </a>
+                                        <!-- ko foreach: $data.AppliedAdjustments -->
+                                        <!-- /ko -->
+                                        <!-- ko foreach: $data.SuggestedAdjustments -->
+                                        <!-- /ko -->
+                                    </li>
+                                </ul>
+                                <!-- /ko -->
+                                <!-- ko template: { name: 'selectedDimensionGroupTemplate', foreach: SelectedDimensions, as: 'Dim' } -->
+                                <!-- /ko -->
+                                <!-- ko template: { name: 'selectedBoolDimensionGroupTemplate', data: SelectedBoolDimensions } -->
+                                <!-- ko if: $data!=null && $data.length > 0 -->
+                                <!-- /ko -->
+                                <!-- /ko -->
+                                <div class="alignRight">
+                                    <a href="#" id="lnkClearAll" onclick="ClearAll(); return false;">Clear All</a> | <a href="#" id="lnkSaveSearch" onclick="SaveSearch(); return false;">Save</a>
+                                </div>
+                            </div>
+                            <!-- /ko -->
+                        </div>
+                        <div id="updatePaging" class="pages hidden pad10">
+                            <strong>Page:</strong>
+                            <span data-bind="text: ret.Page + 1">1</span> of 
+                    <span data-bind="text: Math.ceil(ret.ResultsTotal / ret.ResultsPerPage)">694</span>
+                        </div>
+                        <div id="availableDimensionContents" class="DimGroup">
+                            <!-- ko template: { name: 'dimensionGroupTemplate', foreach: ret.Dimensions, as: 'dimensionGroup' } -->
+                            <div data-bind="attr: { 'id': Id }" class="DimSubGroup" id="4294468135">
+                                <a data-bind="attr: { 'name': Id }" name="4294468135"></a>
+                                <h6>
+                                    <a href="#" data-bind="attr: { 'onclick': 'ToggleDimension(\'' + ContextPath + '\'); return false;' }" onclick="ToggleDimension('4294468135||0'); return false;"><span data-bind="    text: Name">Category</span><span data-bind="    attr: { 'class': checkDimension(DimensionValues) }" class="icon-sort-down pull-right"></span></a>
+                                </h6>
+                                <!-- ko if: DimensionValues -->
+                                <ul>
+                                    <!-- ko foreach: DimensionValues -->
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="MUGS &amp; STEINS" onclick="SelectDimension('4294468135:4294130786||1','CTGR','MUGS &amp; STEINS','8571'); return false;">MUGS &amp; STEINS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(8571)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="TRAVEL MUGS/CUPS" onclick="SelectDimension('4294468135:4294130178||1','CTGR','TRAVEL MUGS/CUPS','4929'); return false;">TRAVEL MUGS/CUPS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(4929)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="GLASSES-DRINKING" onclick="SelectDimension('4294468135:4294131231||1','CTGR','GLASSES-DRINKING','518'); return false;">GLASSES-DRINKING</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(518)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="ENVIRONMENTALLY FRIENDLY PRODUCTS" onclick="SelectDimension('4294468135:4294131380||1','CTGR','ENVIRONMENTALLY FRIENDLY PRODUCTS','475'); return false;">ENVIRONMENTALLY FRIENDLY PRODUCTS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(475)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="BOTTLES" onclick="SelectDimension('4294468135:4294131782||1','CTGR','BOTTLES','383'); return false;">BOTTLES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(383)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="FOOD GIFTS" onclick="SelectDimension('4294468135:4294131308||1','CTGR','FOOD GIFTS','145'); return false;">FOOD GIFTS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(145)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="CANDY" onclick="SelectDimension('4294468135:4294131696||1','CTGR','CANDY','137'); return false;">CANDY</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(137)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="LIGHTS" onclick="SelectDimension('4294468135:4294130885||1','CTGR','LIGHTS','120'); return false;">LIGHTS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(120)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="GLOW PRODUCTS" onclick="SelectDimension('4294468135:4294131194||1','CTGR','GLOW PRODUCTS','109'); return false;">GLOW PRODUCTS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(109)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="GIFT BASKETS &amp; SETS" onclick="SelectDimension('4294468135:4294131239||1','CTGR','GIFT BASKETS &amp; SETS','102'); return false;">GIFT BASKETS &amp; SETS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(102)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="COFFEE" onclick="SelectDimension('4294468135:4294131536||1','CTGR','COFFEE','100'); return false;">COFFEE</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(100)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="CUPS" onclick="SelectDimension('4294468135:4294131487||1','CTGR','CUPS','94'); return false;">CUPS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(94)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="CARABINERS" onclick="SelectDimension('4294468135:4294131633||1','CTGR','CARABINERS','80'); return false;">CARABINERS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(80)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="SHOT GLASSES" onclick="SelectDimension('4294468135:4294130413||1','CTGR','SHOT GLASSES','74'); return false;">SHOT GLASSES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(74)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="COASTERS" onclick="SelectDimension('4294468135:4294131541||1','CTGR','COASTERS','56'); return false;">COASTERS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(56)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="KITS" onclick="SelectDimension('4294468135:4294130964||1','CTGR','KITS','51'); return false;">KITS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(51)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="LAPEL PINS" onclick="SelectDimension('4294468135:4294130906||1','CTGR','LAPEL PINS','37'); return false;">LAPEL PINS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(37)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="TEA" onclick="SelectDimension('4294468135:4294130274||1','CTGR','TEA','36'); return false;">TEA</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(36)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="BOXES" onclick="SelectDimension('4294468135:4294131773||1','CTGR','BOXES','34'); return false;">BOXES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(34)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="PLATES" onclick="SelectDimension('4294468135:4294130569||1','CTGR','PLATES','33'); return false;">PLATES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(33)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="BUTTONS" onclick="SelectDimension('4294468135:4294131733||1','CTGR','BUTTONS','27'); return false;">BUTTONS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(27)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="HEAT TRANSFERS" onclick="SelectDimension('4294468135:4294131132||1','CTGR','HEAT TRANSFERS','26'); return false;">HEAT TRANSFERS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(26)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="MAGNETS" onclick="SelectDimension('4294468135:4294130867||1','CTGR','MAGNETS','25'); return false;">MAGNETS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(25)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="TOOLS-KITCHEN" onclick="SelectDimension('4294468135:4294130235||1','CTGR','TOOLS-KITCHEN','25'); return false;">TOOLS-KITCHEN</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(25)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="BACKPACKS" onclick="SelectDimension('4294468135:4294131878||1','CTGR','BACKPACKS','23'); return false;">BACKPACKS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(23)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="SPECIAL PACKAGING" onclick="SelectDimension('4294468135:4294130377||1','CTGR','SPECIAL PACKAGING','23'); return false;">SPECIAL PACKAGING</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(23)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="KEY HOLDERS" onclick="SelectDimension('4294468135:4294131056||1','CTGR','KEY HOLDERS','21'); return false;">KEY HOLDERS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(21)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="BOWLS" onclick="SelectDimension('4294468135:4294131775||1','CTGR','BOWLS','18'); return false;">BOWLS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(18)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="PITCHERS" onclick="SelectDimension('4294468135:4294130591||1','CTGR','PITCHERS','16'); return false;">PITCHERS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(16)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="WINE GLASSES" onclick="SelectDimension('4294468135:4294130113||1','CTGR','WINE GLASSES','14'); return false;">WINE GLASSES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(14)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="COMPUTER ACCESSORIES" onclick="SelectDimension('4294468135:4294131521||1','CTGR','COMPUTER ACCESSORIES','13'); return false;">COMPUTER ACCESSORIES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(13)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="CANDLES" onclick="SelectDimension('4294468135:4294131697||1','CTGR','CANDLES','11'); return false;">CANDLES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(11)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="DINNERWARE" onclick="SelectDimension('4294468135:4294131433||1','CTGR','DINNERWARE','11'); return false;">DINNERWARE</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(11)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="AUTO DASH ACCESSORIES" onclick="SelectDimension('4294468135:4294131886||1','CTGR','AUTO DASH ACCESSORIES','9'); return false;">AUTO DASH ACCESSORIES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(9)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="T-SHIRTS" onclick="SelectDimension('4294468135:4294130293||1','CTGR','T-SHIRTS','9'); return false;">T-SHIRTS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(9)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="FLATWARE" onclick="SelectDimension('4294468135:4294131324||1','CTGR','FLATWARE','8'); return false;">FLATWARE</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(8)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="POUCHES" onclick="SelectDimension('4294468135:4294130538||1','CTGR','POUCHES','8'); return false;">POUCHES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(8)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="BEAUTY AIDS" onclick="SelectDimension('4294468135:4294131822||1','CTGR','BEAUTY AIDS','7'); return false;">BEAUTY AIDS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(7)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="FLASHLIGHTS" onclick="SelectDimension('4294468135:4294131331||1','CTGR','FLASHLIGHTS','7'); return false;">FLASHLIGHTS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(7)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="SPA PRODUCTS" onclick="SelectDimension('4294468135:4294130379||1','CTGR','SPA PRODUCTS','5'); return false;">SPA PRODUCTS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(5)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="SUN VISORS" onclick="SelectDimension('4294468135:4294130313||1','CTGR','SUN VISORS','5'); return false;">SUN VISORS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(5)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="FORKS &amp; SPOONS" onclick="SelectDimension('4294468135:4294131286||1','CTGR','FORKS &amp; SPOONS','4'); return false;">FORKS &amp; SPOONS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(4)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="PRETZELS" onclick="SelectDimension('4294468135:4294130530||1','CTGR','PRETZELS','4'); return false;">PRETZELS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(4)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="EYEGLASSES" onclick="SelectDimension('4294468135:4294131360||1','CTGR','EYEGLASSES','3'); return false;">EYEGLASSES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(3)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="FOAM NOVELTIES" onclick="SelectDimension('4294468135:4294131319||1','CTGR','FOAM NOVELTIES','3'); return false;">FOAM NOVELTIES</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(3)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="LIQUID MOTION PRODUCTS" onclick="SelectDimension('4294468135:4294130877||1','CTGR','LIQUID MOTION PRODUCTS','2'); return false;">LIQUID MOTION PRODUCTS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(2)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="MANICURE TOOLS" onclick="SelectDimension('4294468135:4294130855||1','CTGR','MANICURE TOOLS','2'); return false;">MANICURE TOOLS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(2)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="POPCORN" onclick="SelectDimension('4294468135:4294130551||1','CTGR','POPCORN','2'); return false;">POPCORN</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(2)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="SHAVING KITS" onclick="SelectDimension('4294468135:4294130441||1','CTGR','SHAVING KITS','2'); return false;">SHAVING KITS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(2)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="CUSTOM PRODUCTS" onclick="SelectDimension('4294468135:4294131476||1','CTGR','CUSTOM PRODUCTS','1'); return false;">CUSTOM PRODUCTS</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1)</div>
+                                    </li>
+                                    <!-- /ko -->
+                                </ul>
+                                <!-- ko if: DimensionValues.length > 5 -->
+                                <span class="navMoreLess">
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navMore">+ See More</a>
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navLess">- See Less</a>
+                                </span>
+                                <!-- /ko -->
+                                <!-- /ko -->
+                            </div>
+
+                            <div data-bind="attr: { 'id': Id }" class="DimSubGroup" id="39">
+                                <a data-bind="attr: { 'name': Id }" name="39"></a>
+                                <h6>
+                                    <a href="#" data-bind="attr: { 'onclick': 'ToggleDimension(\'' + ContextPath + '\'); return false;' }" onclick="ToggleDimension('39||0'); return false;"><span data-bind="    text: Name">Price</span><span data-bind="    attr: { 'class': checkDimension(DimensionValues) }" class="icon-sort-down pull-right"></span></a>
+                                </h6>
+                                <!-- ko if: DimensionValues -->
+                                <ul>
+                                    <!-- ko foreach: DimensionValues -->
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="$0.50 and Under" onclick="SelectDimension('39:45||1','PRCR','$0.50 and Under','12'); return false;">$0.50 and Under</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(12)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="$0.50 - $1.00" onclick="SelectDimension('39:46||1','PRCR','$0.50 - $1.00','61'); return false;">$0.50 - $1.00</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(61)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="$1.00 - $2.00" onclick="SelectDimension('39:47||1','PRCR','$1.00 - $2.00','460'); return false;">$1.00 - $2.00</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(460)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="$2.00 - $3.00" onclick="SelectDimension('39:48||1','PRCR','$2.00 - $3.00','1033'); return false;">$2.00 - $3.00</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1033)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="$3.00 - $5.00" onclick="SelectDimension('39:49||1','PRCR','$3.00 - $5.00','3523'); return false;">$3.00 - $5.00</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(3523)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="$5.00 - $10.00" onclick="SelectDimension('39:51||1','PRCR','$5.00 - $10.00','4797'); return false;">$5.00 - $10.00</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(4797)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="$10.00 - $20.00" onclick="SelectDimension('39:56||1','PRCR','$10.00 - $20.00','1803'); return false;">$10.00 - $20.00</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1803)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="$20.00 - $50.00" onclick="SelectDimension('39:57||1','PRCR','$20.00 - $50.00','493'); return false;">$20.00 - $50.00</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(493)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="$50.00 - $100.00" onclick="SelectDimension('39:60||1','PRCR','$50.00 - $100.00','157'); return false;">$50.00 - $100.00</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(157)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="$100 and Over" onclick="SelectDimension('39:44||1','PRCR','$100 and Over','25'); return false;">$100 and Over</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(25)</div>
+                                    </li>
+                                    <!-- /ko -->
+                                </ul>
+                                <!-- ko if: DimensionValues.length > 5 -->
+                                <span class="navMoreLess">
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navMore">+ See More</a>
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navLess">- See Less</a>
+                                </span>
+                                <!-- /ko -->
+                                <!-- /ko -->
+                            </div>
+
+                            <div data-bind="attr: { 'id': Id }" class="DimSubGroup" id="Div1">
+                                <a data-bind="attr: { 'name': Id }" name="4294465047"></a>
+                                <h6>
+                                    <a href="#" data-bind="attr: { 'onclick': 'ToggleDimension(\'' + ContextPath + '\'); return false;' }" onclick="ToggleDimension('4294465047||0'); return false;"><span data-bind="    text: Name">Color</span><span data-bind="    attr: { 'class': checkDimension(DimensionValues) }" class="icon-sort-down pull-right"></span></a>
+                                </h6>
+                                <!-- ko if: DimensionValues -->
+                                <ul>
+                                    <!-- ko foreach: DimensionValues -->
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Blue Shades" onclick="SelectDimension('4294465047:4294130093||1','COLR','Blue Shades','4629'); return false;">Blue Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(4629)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Red Shades" onclick="SelectDimension('4294465047:4294130029||1','COLR','Red Shades','3097'); return false;">Red Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(3097)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Black Shades" onclick="SelectDimension('4294465047:4294130101||1','COLR','Black Shades','2834'); return false;">Black Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(2834)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="White Shades" onclick="SelectDimension('4294465047:4294130022||1','COLR','White Shades','2805'); return false;">White Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(2805)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Green Shades" onclick="SelectDimension('4294465047:4294130070||1','COLR','Green Shades','2448'); return false;">Green Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(2448)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Metallic Color Shades" onclick="SelectDimension('4294465047:4294130061||1','COLR','Metallic Color Shades','1629'); return false;">Metallic Color Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1629)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="MultiColor Shades" onclick="SelectDimension('4294465047:4294130049||1','COLR','MultiColor Shades','1068'); return false;">MultiColor Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1068)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Orange Shades" onclick="SelectDimension('4294465047:4294130045||1','COLR','Orange Shades','1052'); return false;">Orange Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1052)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Gray Shades" onclick="SelectDimension('4294465047:4294130075||1','COLR','Gray Shades','987'); return false;">Gray Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(987)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Yellow Shades" onclick="SelectDimension('4294465047:4294130018||1','COLR','Yellow Shades','937'); return false;">Yellow Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(937)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Purple Shades" onclick="SelectDimension('4294465047:4294130034||1','COLR','Purple Shades','768'); return false;">Purple Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(768)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Pink Shades" onclick="SelectDimension('4294465047:4294130039||1','COLR','Pink Shades','733'); return false;">Pink Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(733)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Brown Shades" onclick="SelectDimension('4294465047:4294130084||1','COLR','Brown Shades','554'); return false;">Brown Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(554)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Clear Shades" onclick="SelectDimension('4294465047:4294130077||1','COLR','Clear Shades','62'); return false;">Clear Shades</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(62)</div>
+                                    </li>
+                                    <!-- /ko -->
+                                </ul>
+                                <!-- ko if: DimensionValues.length > 5 -->
+                                <span class="navMoreLess">
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navMore">+ See More</a>
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navLess">- See Less</a>
+                                </span>
+                                <!-- /ko -->
+                                <!-- /ko -->
+                            </div>
+
+                            <div data-bind="attr: { 'id': Id }" class="DimSubGroup" id="Div2">
+                                <a data-bind="attr: { 'name': Id }" name="4294308518"></a>
+                                <h6>
+                                    <a href="#" data-bind="attr: { 'onclick': 'ToggleDimension(\'' + ContextPath + '\'); return false;' }" onclick="ToggleDimension('4294308518||0'); return false;"><span data-bind="    text: Name">Material</span><span data-bind="    attr: { 'class': checkDimension(DimensionValues) }" class="icon-sort-down pull-right"></span></a>
+                                </h6>
+                                <!-- ko if: DimensionValues -->
+                                <ul>
+                                    <!-- ko foreach: DimensionValues -->
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Stone Grouping" onclick="SelectDimension('4294308518:4293998062||1','MTRL','Stone Grouping','4855'); return false;">Stone Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(4855)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Metal Grouping" onclick="SelectDimension('4294308518:4293998355||1','MTRL','Metal Grouping','3148'); return false;">Metal Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(3148)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Plastic Grouping" onclick="SelectDimension('4294308518:4293998173||1','MTRL','Plastic Grouping','2191'); return false;">Plastic Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(2191)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Glass Grouping" onclick="SelectDimension('4294308518:4293998395||1','MTRL','Glass Grouping','1469'); return false;">Glass Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1469)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Synthetic Grouping" onclick="SelectDimension('4294308518:4293998037||1','MTRL','Synthetic Grouping','49'); return false;">Synthetic Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(49)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Rubber Grouping" onclick="SelectDimension('4294308518:4293998718||1','MTRL','Rubber Grouping','45'); return false;">Rubber Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(45)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Other Grouping" onclick="SelectDimension('4294308518:4293998240||1','MTRL','Other Grouping','31'); return false;">Other Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(31)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Fabric Grouping" onclick="SelectDimension('4294308518:4293998602||1','MTRL','Fabric Grouping','28'); return false;">Fabric Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(28)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Polyester Grouping" onclick="SelectDimension('4294308518:4293998075||1','MTRL','Polyester Grouping','25'); return false;">Polyester Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(25)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Composite Board Grouping" onclick="SelectDimension('4294308518:4293998636||1','MTRL','Composite Board Grouping','22'); return false;">Composite Board Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(22)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Cotton Grouping" onclick="SelectDimension('4294308518:4293998613||1','MTRL','Cotton Grouping','14'); return false;">Cotton Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(14)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Wood Grouping" onclick="SelectDimension('4294308518:4293997993||1','MTRL','Wood Grouping','13'); return false;">Wood Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(13)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Foam Grouping" onclick="SelectDimension('4294308518:4293998414||1','MTRL','Foam Grouping','11'); return false;">Foam Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(11)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Paper Grouping" onclick="SelectDimension('4294308518:4293998196||1','MTRL','Paper Grouping','10'); return false;">Paper Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(10)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Vinyl Grouping" onclick="SelectDimension('4294308518:4293998001||1','MTRL','Vinyl Grouping','10'); return false;">Vinyl Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(10)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Leather-Suede Grouping" onclick="SelectDimension('4294308518:4293998384||1','MTRL','Leather-Suede Grouping','8'); return false;">Leather-Suede Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(8)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Nylon Grouping" onclick="SelectDimension('4294308518:4293998285||1','MTRL','Nylon Grouping','7'); return false;">Nylon Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(7)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Blend Grouping" onclick="SelectDimension('4294308518:4293998712||1','MTRL','Blend Grouping','6'); return false;">Blend Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(6)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Organic Grouping" onclick="SelectDimension('4294308518:4293998279||1','MTRL','Organic Grouping','3'); return false;">Organic Grouping</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(3)</div>
+                                    </li>
+                                    <!-- /ko -->
+                                </ul>
+                                <!-- ko if: DimensionValues.length > 5 -->
+                                <span class="navMoreLess">
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navMore">+ See More</a>
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navLess">- See Less</a>
+                                </span>
+                                <!-- /ko -->
+                                <!-- /ko -->
+                            </div>
+
+                            <div data-bind="attr: { 'id': Id }" class="DimSubGroup" id="Div3">
+                                <a data-bind="attr: { 'name': Id }" name="4294308696"></a>
+                                <h6>
+                                    <a href="#" data-bind="attr: { 'onclick': 'ToggleDimension(\'' + ContextPath + '\'); return false;' }" onclick="ToggleDimension('4294308696||0'); return false;"><span data-bind="    text: Name">Size</span><span data-bind="    attr: { 'class': checkDimension(DimensionValues) }" class="icon-sort-down pull-right"></span></a>
+                                </h6>
+                                <!-- ko if: DimensionValues -->
+                                <ul>
+                                    <!-- ko foreach: DimensionValues -->
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="12-16 oz" onclick="SelectDimension('4294308696:4294126098||1','SIZE','12-16 oz','6019'); return false;">12-16 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(6019)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="8-12 oz" onclick="SelectDimension('4294308696:4294126357||1','SIZE','8-12 oz','2447'); return false;">8-12 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(2447)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="16-24 oz" onclick="SelectDimension('4294308696:4294007802||1','SIZE','16-24 oz','1287'); return false;">16-24 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1287)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="2&quot; - 6&quot;" onclick="SelectDimension('4294308696:4294105212||1','SIZE','2&quot; - 6&quot;','344'); return false;">2" - 6"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(344)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="4-8 oz" onclick="SelectDimension('4294308696:4294126543||1','SIZE','4-8 oz','216'); return false;">4-8 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(216)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="24 - 28 oz" onclick="SelectDimension('4294308696:4294130009||1','SIZE','24 - 28 oz','196'); return false;">24 - 28 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(196)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="6&quot; - 8&quot;" onclick="SelectDimension('4294308696:4294125937||1','SIZE','6&quot; - 8&quot;','175'); return false;">6" - 8"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(175)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="32- 36 oz" onclick="SelectDimension('4294308696:4294129934||1','SIZE','32- 36 oz','119'); return false;">32- 36 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(119)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="2-4 oz" onclick="SelectDimension('4294308696:4294007953||1','SIZE','2-4 oz','110'); return false;">2-4 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(110)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="1-2 oz" onclick="SelectDimension('4294308696:4294126631||1','SIZE','1-2 oz','86'); return false;">1-2 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(86)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="8&quot; - 12&quot;" onclick="SelectDimension('4294308696:4294031061||1','SIZE','8&quot; - 12&quot;','81'); return false;">8" - 12"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(81)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="12&quot; - 18&quot;" onclick="SelectDimension('4294308696:4294064352||1','SIZE','12&quot; - 18&quot;','46'); return false;">12" - 18"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(46)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="3-5 pounds" onclick="SelectDimension('4294308696:4294126217||1','SIZE','3-5 pounds','34'); return false;">3-5 pounds</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(34)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="36 oz - 48 oz" onclick="SelectDimension('4294308696:4294129879||1','SIZE','36 oz - 48 oz','13'); return false;">36 oz - 48 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(13)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Standard Sizes" onclick="SelectDimension('4294308696:4294129796||1','SIZE','Standard Sizes','13'); return false;">Standard Sizes</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(13)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="30&quot; - 36&quot;" onclick="SelectDimension('4294308696:4294036006||1','SIZE','30&quot; - 36&quot;','12'); return false;">30" - 36"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(12)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Other Sizes" onclick="SelectDimension('4294308696:4294128362||1','SIZE','Other Sizes','10'); return false;">Other Sizes</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(10)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="28-32 oz" onclick="SelectDimension('4294308696:4294125976||1','SIZE','28-32 oz','10'); return false;">28-32 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(10)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="1&quot; - 2&quot;" onclick="SelectDimension('4294308696:4294109583||1','SIZE','1&quot; - 2&quot;','10'); return false;">1" - 2"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(10)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="18&quot; - 24&quot;" onclick="SelectDimension('4294308696:4294045563||1','SIZE','18&quot; - 24&quot;','9'); return false;">18" - 24"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(9)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="24&quot; - 30&quot;" onclick="SelectDimension('4294308696:4294038753||1','SIZE','24&quot; - 30&quot;','7'); return false;">24" - 30"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(7)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="&lt; 1&quot;" onclick="SelectDimension('4294308696:4294110614||1','SIZE','&lt; 1&quot;','6'); return false;">&lt; 1"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(6)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Other" onclick="SelectDimension('4294308696:4294046134||1','SIZE','Other','6'); return false;">Other</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(6)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="&gt; 60&quot;" onclick="SelectDimension('4294308696:4294007620||1','SIZE','&gt; 60&quot;','5'); return false;">&gt; 60"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(5)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Extended Sizes" onclick="SelectDimension('4294308696:4294129341||1','SIZE','Extended Sizes','1'); return false;">Extended Sizes</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Neck Sizes" onclick="SelectDimension('4294308696:4294128458||1','SIZE','Neck Sizes','1'); return false;">Neck Sizes</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="&lt; 1 oz" onclick="SelectDimension('4294308696:4294126852||1','SIZE','&lt; 1 oz','1'); return false;">&lt; 1 oz</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="&gt; 5 lbs" onclick="SelectDimension('4294308696:4294110817||1','SIZE','&gt; 5 lbs','1'); return false;">&gt; 5 lbs</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="36&quot; - 42&quot;" onclick="SelectDimension('4294308696:4294034276||1','SIZE','36&quot; - 42&quot;','1'); return false;">36" - 42"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="42&quot; - 48&quot;" onclick="SelectDimension('4294308696:4294032887||1','SIZE','42&quot; - 48&quot;','1'); return false;">42" - 48"</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(1)</div>
+                                    </li>
+                                    <!-- /ko -->
+                                </ul>
+                                <!-- ko if: DimensionValues.length > 5 -->
+                                <span class="navMoreLess">
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navMore">+ See More</a>
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navLess">- See Less</a>
+                                </span>
+                                <!-- /ko -->
+                                <!-- /ko -->
+                            </div>
+
+                            <div data-bind="attr: { 'id': Id }" class="DimSubGroup" id="131">
+                                <a data-bind="attr: { 'name': Id }" name="131"></a>
+                                <h6>
+                                    <a href="#" data-bind="attr: { 'onclick': 'ToggleDimension(\'' + ContextPath + '\'); return false;' }" onclick="ToggleDimension('131||0'); return false;"><span data-bind="    text: Name">Supplier</span><span data-bind="    attr: { 'class': checkDimension(DimensionValues) }" class="icon-sort-down pull-right"></span></a>
+                                </h6>
+                                <!-- ko if: DimensionValues -->
+                                <ul>
+                                    <!-- ko foreach: DimensionValues -->
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="777 Promotional Products Inc" onclick="SelectDimension('131:4293952999||1','SPLR','777 Promotional Products Inc','178'); return false;">777 Promotional Products Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(178)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="A A A &amp; M K Promotion Inc." onclick="SelectDimension('131:4294416679||1','SPLR','A A A &amp; M K Promotion Inc.','154'); return false;">A A A &amp; M K Promotion Inc.</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(154)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Ad-N-art Inc" onclick="SelectDimension('131:4294381702||1','SPLR','Ad-N-art Inc','182'); return false;">Ad-N-art Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(182)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Adsun, Inc" onclick="SelectDimension('131:4294372604||1','SPLR','Adsun, Inc','481'); return false;">Adsun, Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(481)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix ">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="AlightPromos.com" onclick="SelectDimension('131:4294393147||1','SPLR','AlightPromos.com','50'); return false;">AlightPromos.com</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(50)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Allen Company/The" onclick="SelectDimension('131:4294397646||1','SPLR','Allen Company/The','131'); return false;">Allen Company/The</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(131)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Apex Imaging Inc" onclick="SelectDimension('131:4294400739||1','SPLR','Apex Imaging Inc','115'); return false;">Apex Imaging Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(115)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Archer's Decorative Glass Corp" onclick="SelectDimension('131:4294407352||1','SPLR','Archers Decorative Glass Corp','45'); return false;">Archer's Decorative Glass Corp</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(45)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Art Crystal LTD" onclick="SelectDimension('131:4294418346||1','SPLR','Art Crystal LTD','41'); return false;">Art Crystal LTD</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(41)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Atteff International Inc" onclick="SelectDimension('131:4294392012||1','SPLR','Atteff International Inc','56'); return false;">Atteff International Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(56)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Baltimore Glassware Decorators" onclick="SelectDimension('131:4294408189||1','SPLR','Baltimore Glassware Decorators','87'); return false;">Baltimore Glassware Decorators</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(87)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Bel Promo" onclick="SelectDimension('131:4294149822||1','SPLR','Bel Promo','316'); return false;">Bel Promo</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(316)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Bel Promo/Hurricane Line" onclick="SelectDimension('131:4294152998||1','SPLR','Bel Promo/Hurricane Line','382'); return false;">Bel Promo/Hurricane Line</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(382)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Benner China &amp; Glassware Of FL" onclick="SelectDimension('131:4294399958||1','SPLR','Benner China &amp; Glassware Of FL','279'); return false;">Benner China &amp; Glassware Of FL</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(279)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Berney-Karp Inc" onclick="SelectDimension('131:4294375447||1','SPLR','Berney-Karp Inc','150'); return false;">Berney-Karp Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(150)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="China Imprint" onclick="SelectDimension('131:4294412939||1','SPLR','China Imprint','165'); return false;">China Imprint</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(165)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Cooper &amp; Clement Inc" onclick="SelectDimension('131:4294410115||1','SPLR','Cooper &amp; Clement Inc','247'); return false;">Cooper &amp; Clement Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(247)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Custom Printing II LTD" onclick="SelectDimension('131:4294401972||1','SPLR','Custom Printing II LTD','106'); return false;">Custom Printing II LTD</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(106)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Edwards Industries" onclick="SelectDimension('131:4294383760||1','SPLR','Edwards Industries','276'); return false;">Edwards Industries</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(276)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="ESP Canada" onclick="SelectDimension('131:4293953424||1','SPLR','ESP Canada','45'); return false;">ESP Canada</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(45)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="First Choice Promos" onclick="SelectDimension('131:4293954224||1','SPLR','First Choice Promos','37'); return false;">First Choice Promos</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(37)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Global Sourcing Connection LTD" onclick="SelectDimension('131:4294416843||1','SPLR','Global Sourcing Connection LTD','188'); return false;">Global Sourcing Connection LTD</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(188)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Grant Davis Co Inc" onclick="SelectDimension('131:4294377596||1','SPLR','Grant Davis Co Inc','93'); return false;">Grant Davis Co Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(93)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Guild Line" onclick="SelectDimension('131:4294380427||1','SPLR','Guild Line','213'); return false;">Guild Line</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(213)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="K &amp; R Precision Corporation" onclick="SelectDimension('131:4294399763||1','SPLR','K &amp; R Precision Corporation','43'); return false;">K &amp; R Precision Corporation</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(43)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Litehouse Custom Printing Inc" onclick="SelectDimension('131:4294416412||1','SPLR','Litehouse Custom Printing Inc','84'); return false;">Litehouse Custom Printing Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(84)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="M Cornell Importers Inc" onclick="SelectDimension('131:4294414314||1','SPLR','M Cornell Importers Inc','704'); return false;">M Cornell Importers Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(704)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Manufacturers' Direct Sls Inc" onclick="SelectDimension('131:4294410763||1','SPLR','Manufacturers Direct Sls Inc','55'); return false;">Manufacturers' Direct Sls Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(55)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Modern China Co Inc" onclick="SelectDimension('131:4294411038||1','SPLR','Modern China Co Inc','127'); return false;">Modern China Co Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(127)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Moderne Glass Company Inc" onclick="SelectDimension('131:4294387564||1','SPLR','Moderne Glass Company Inc','345'); return false;">Moderne Glass Company Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(345)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Nordic Co Inc" onclick="SelectDimension('131:4294369987||1','SPLR','Nordic Co Inc','112'); return false;">Nordic Co Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(112)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Norwood Canada" onclick="SelectDimension('131:4293952206||1','SPLR','Norwood Canada','80'); return false;">Norwood Canada</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(80)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Norwood US" onclick="SelectDimension('131:4293954074||1','SPLR','Norwood US','81'); return false;">Norwood US</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(81)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Numo" onclick="SelectDimension('131:4294392622||1','SPLR','Numo','167'); return false;">Numo</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(167)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Olde Country Reproductions Inc" onclick="SelectDimension('131:4294404588||1','SPLR','Olde Country Reproductions Inc','123'); return false;">Olde Country Reproductions Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(123)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Phoenix Industries USA" onclick="SelectDimension('131:4294419083||1','SPLR','Phoenix Industries USA','173'); return false;">Phoenix Industries USA</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(173)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="PromoBiz USA LLC" onclick="SelectDimension('131:4294410557||1','SPLR','PromoBiz USA LLC','54'); return false;">PromoBiz USA LLC</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(54)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Pyrographics" onclick="SelectDimension('131:4294411153||1','SPLR','Pyrographics','474'); return false;">Pyrographics</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(474)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="RFG Line" onclick="SelectDimension('131:4294351686||1','SPLR','RFG Line','68'); return false;">RFG Line</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(68)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Sabina" onclick="SelectDimension('131:4294391187||1','SPLR','Sabina','176'); return false;">Sabina</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(176)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Scancorp Inc" onclick="SelectDimension('131:4294410125||1','SPLR','Scancorp Inc','247'); return false;">Scancorp Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(247)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Select Manufacturers Inc" onclick="SelectDimension('131:4294405281||1','SPLR','Select Manufacturers Inc','60'); return false;">Select Manufacturers Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(60)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Source Beyond" onclick="SelectDimension('131:4294323406||1','SPLR','Source Beyond','140'); return false;">Source Beyond</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(140)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="St Regis Crystal" onclick="SelectDimension('131:4293942829||1','SPLR','St Regis Crystal','65'); return false;">St Regis Crystal</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(65)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Starline Industries Inc" onclick="SelectDimension('131:4294371749||1','SPLR','Starline Industries Inc','89'); return false;">Starline Industries Inc</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(89)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Supplier Direct Promotions" onclick="SelectDimension('131:4294151500||1','SPLR','Supplier Direct Promotions','88'); return false;">Supplier Direct Promotions</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(88)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="TJ Promotions Corp" onclick="SelectDimension('131:4293954034||1','SPLR','TJ Promotions Corp','121'); return false;">TJ Promotions Corp</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(121)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Universal Printing" onclick="SelectDimension('131:4293977327||1','SPLR','Universal Printing','39'); return false;">Universal Printing</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(39)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="W C Bunting Co" onclick="SelectDimension('131:4294383577||1','SPLR','W C Bunting Co','108'); return false;">W C Bunting Co</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(108)</div>
+                                    </li>
+
+                                    <li data-bind="attr: { 'class': checkDimensionCount($index()) }" class="clearfix hidden">
+                                        <a href="#" class="ellipsis DimValNameLink" data-bind="text: Name, attr: { 'title': Name, 'onclick': 'SelectDimension(\'' + ContextPath + '\',\'' + $parent.StatCode + '\',\'' + FormatDimName(Name) + '\',\'' + Count + '\'); return false;' }" title="Zipline" onclick="SelectDimension('131:4294387864||1','SPLR','Zipline','88'); return false;">Zipline</a>
+                                        <div class="DimValCount" data-bind="text: '(' + Count + ')'">(88)</div>
+                                    </li>
+                                    <!-- /ko -->
+                                </ul>
+                                <!-- ko if: DimensionValues.length > 5 -->
+                                <span class="navMoreLess">
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navMore">+ See More</a>
+                                    <a href="#" onclick="toggleDimSubGroup(this); return false;" class="navLess">- See Less</a>
+                                </span>
+                                <!-- /ko -->
+                                <!-- /ko -->
+                            </div>
+
+                            <!-- /ko -->
+                            <!-- ko template: { name: 'boolDimensionGroupTemplate', data: ret.BoolDimensions } -->
+                            <!-- ko if: $data!=null && $data.length > 0 -->
+                            <!-- /ko -->
+                            <!-- /ko -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-col">
+                <!--Body content -->
+                <div class="viewCriteria">
+                    <div class="form-inline">
+                        Sort By: 
+                <div class="btn-group sort-by">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        Default <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li value="DFLT"><a href="#">Default</a></li>
+                        <li value="PRLH"><a href="#">Price: Low to High</a></li>
+                        <li value="PRHL"><a href="#">Price: High to Low</a></li>
+                        <li value="CSLH"><a href="#">Cost: Low to High</a></li>
+                        <li value="CSHL"><a href="#">Cost: High to Low</a></li>
+                        <li value="PRFT"><a href="#">Profit</a></li>
+                        <li value="CAPR"><a href="#">Canadian Priced</a></li>
+                        <li value="ASIN"><a href="#">ASI Number</a></li>
+                        <li value="SPNM"><a href="#">Supplier Name</a></li>
+                        <li value="SPRT"><a href="#">Supplier Rating</a></li>
+                        <li value="PVRN"><a href="#">Preferred Rank</a></li>
+                        <li value="CASP"><a href="#">Canadian Suppliers</a></li>
+                        <li value="PRNM"><a href="#">Product Name</a></li>
+                        <li value="PRNB"><a href="#">Product Number</a></li>
+                        <li value="PRCF"><a href="#">Confirmed Product</a></li>
+                        <li value="PRNW"><a href="#">New Product</a></li>
+                    </ul>
+                </div>
+
+                        &nbsp; 
+                <div class="btn-group number-per-page">
+                    <button type="button" id="number-per-page" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <span class="val">20</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#" onclick="changeVal('number-per-page','20'); return false;">20</a></li>
+                        <li><a href="#" onclick="changeVal('number-per-page','40'); return false;">40</a></li>
+                        <li><a href="#" onclick="changeVal('number-per-page','60'); return false;">60</a></li>
+                        <li><a href="#" onclick="changeVal('number-per-page','80'); return false;">80</a></li>
+                        <li><a href="#" onclick="changeVal('number-per-page','100'); return false;">100</a></li>
+                    </ul>
+                </div>
+                        &nbsp; 
+                View: 
+                <div class="btn-group views">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-th-large"></i> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu pull-right" role="menu">
+                        <li><a href="#" onclick="changeView('list-view','icon-th-list'); return false;">List View <i class="icon-th-list pull-right large"></i></a></li>
+                        <li><a href="#" onclick="changeView('','icon-th-large'); return false;">Large Tile View <i class="icon-th-large pull-right large"></i></a></li>
+                        <li><a href="#" onclick="changeView('tile-slim','icon-th'); return false;">Slim Tile View <i class="icon-th pull-right large"></i></a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Customize</a></li>
+                    </ul>
+                </div>
+
+
+
+                        <div class="pull-right">
+                            Page: 
+                            <div class="btn-group">
+                                <input type="text" class="form-control " value="1" />
+                            </div>
+                            <span>of</span>
+                            <span>694</span>
+
+                            <span class="arrow"><i class="icon-caret-left"></i></span>
+                            <a class="arrow" title="Next Page" href="#/page/2"><i class="icon-caret-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <ul class="grid cs-style-3 clearfix">
+                        <li class="col-lg-3">
+                            <a href="#/product/{{product.ProductId}}">
+                                <figure>
+                                    <div class="prod-image">
+                                        <img />
+                                        <button type="button" class="btn btn-info btn-sm quick-view">Quick View</button>
+                                        <div class="prod-tags">
+                                            <a href="#"><i class="icon-magic"></i></a>
+                                        </div>
+                                    </div>
+                                    <figcaption>
+                                        <h3>{{product.ProductName}}</h3>
+                                        <span class="list-price-label">Price:</span> <span>50 @@ $14.51</span><br />
+                                        <span class="asi-number">asi/{{product.AsiNo}}</span>
+                                    </figcaption>
+                                    <div class="row icons">
+                                        <div class="col-xs-3">
+                                            <i class="icon-shopping-cart"></i>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <i class="icon-heart-empty"></i>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <i class="icon-plus-sign-alt"></i>
+                                        </div>
+                                        <div class="col-xs-3">
+                                            <i class="icon-paper-clip"></i>
+                                        </div>
+                                    </div>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function changeView(view, classname) {
+        $('.views .dropdown-toggle i').removeClass().addClass(classname);
+        $('.grid').removeClass('tile-slim').removeClass('list-view').addClass(view);
+    }
+</script>

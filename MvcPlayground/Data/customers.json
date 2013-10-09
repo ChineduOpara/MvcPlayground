@@ -1,0 +1,13 @@
+﻿ [
+    {
+		"id":"1",
+        "name": "Walter White",
+		"companyname":"My Company",
+		"street": "154 Highway Park",
+		"city":"Trevose",
+		"state":"PA",
+		"zip":"19053",
+		"phone":"555-555-5555",
+		"email":"wwhite@methlabs.org"
+	}
+]

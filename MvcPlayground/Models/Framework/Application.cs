@@ -7,19 +7,31 @@ namespace MvcPlayground.Models.Framework
 {
     public class Application
     {
-        public int ApplicationId { get; set; }
+        public int Id { get; set; }
         public string Code { get; set; }
         public string Domain { get; set; }
         public string Version { get; set; }
-        public ICollection<Page> Pages { get; set; }
+        public ICollection<Page> Pages { get; private set; }
 
-        public Page SelectPageByName(string name)
+        /// <summary>
+        /// Indexer by page name.
+        /// </summary>
+        /// <param name="pageName"></param>
+        /// <returns></returns>
+        public Page this[string pageName]
         {
-            if (Pages != null)
+            get
             {
-                return Pages.FirstOrDefault(p => string.Equals(p.Name, name, StringComparison.OrdinalIgnoreCase));
+                return Pages.FirstOrDefault(p => string.Equals(p.Name, pageName, StringComparison.OrdinalIgnoreCase));
             }
-            return null;
+        }
+
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        public Application()
+        {
+            Pages = new List<Page>();
         }
     }
 }

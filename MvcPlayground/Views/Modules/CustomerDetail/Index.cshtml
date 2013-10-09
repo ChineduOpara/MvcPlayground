@@ -1,0 +1,123 @@
+@using MvcPlayground.Models.Framework
+@using MvcPlayground.Models.User;
+
+@{
+    var user = (Customer)Model;
+}
+
+<div class="page-header clearfix">
+    <h1 class="pull-left">
+        <i class="icon-user"></i>
+        <span>User profile</span>
+    </h1>
+    <div class="pull-right">
+        <ul class="breadcrumb">
+            <li>
+                <a href="index.html">
+                    <i class="icon-bar-chart"></i>
+                </a>
+            </li>
+            <li class="separator">
+                <i class="icon-angle-right"></i>
+            </li>
+            <li>Example pages</li>
+            <li class="separator">
+                <i class="icon-angle-right"></i>
+            </li>
+            <li class="active">User profile</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-2">
+        <div class="box">
+            <div class="box-content">
+                <div class="thumbnail">
+                    <img src="http://media-social.s-msn.com/images/blogs/00120065-0000-0000-0000-000000000000_00000065-075e-0000-0000-000000000000_20130912191305_msn.breakingbad.jpg" alt="Walter White">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-10">
+        <div class="box">
+            <div class="box-content box-double-padding">
+                <form class="form" style="margin-bottom: 0;">
+                    <fieldset>
+                        <div class="col-lg-4">
+                            <div class="lead">
+                                <i class="icon-signin text-contrast"></i>
+                                Login info
+                            </div>
+                            <small class="muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nisl est, vulputate at porttitor non, interdum a mauris. Phasellus imperdiet gravida pulvinar.</small>
+                        </div>
+                        <div class="col-lg-7 offset1">
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input class="form-control" id="username" placeholder="Username" type="text" value="@user.UserName" />
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input class="form-control" id="email" placeholder="E-mail" type="text" value="@user.Email" />
+                            </div>
+                            <hr class="hr-normal">
+                            <div class="form-group">
+                                <div class="controls">
+                                    <label class="checkbox">
+                                        <input data-target="#change-password" data-toggle="collapse" id="changepasswordcheck" type="checkbox" value="option1"/>
+                                        Change password?
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="collapse" id="change-password">
+                                <div class="form-group">
+                                    <label class="control-label">Password</label>
+                                    <input class="form-control" id="password" placeholder="Password" type="password"/>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Password confirmation</label>
+                                    <input class="form-control" id="password-confirmation" placeholder="Password confirmation" type="password"/>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <hr class="hr-normal">
+                    <fieldset>
+                        <div class="col-lg-4">
+                            <div class="lead">
+                                <i class="icon-user text-contrast"></i>
+                                Personal info
+                            </div>
+                            <small class="muted">Proin eu nibh ut urna tristique rhoncus. Sed euismod, quam sed dignissim imperdiet, nulla leo vehicula mi, a sagittis lacus augue nec sapien.</small>
+                        </div>
+                        <div class="col-lg-7 offset1">
+                            <div class="form-group">
+                                <label>First name</label>
+                                <input class="form-control" id="firstname" placeholder="First name" type="text" value="@user.FirstName"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Last name</label>
+                                <input class="form-control" id="lastname" placeholder="Last name" type="text" value="@user.LastName">
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <label>Bio</label>
+                                <textarea class="autosize form-control" id="bio" placeholder="Bio" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 46px;">
+                                    @user.Bio
+                                </textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-actions" style="margin-bottom: 0;">
+                        <div class="text-right">
+                            <div class="btn btn-primary">
+                                <i class="icon-save"></i>
+                                Save
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

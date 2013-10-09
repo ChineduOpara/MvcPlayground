@@ -1,31 +1,51 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace MvcPlayground.Models.Framework
 {
-    public class Module
+    public class Module : NamedEntity
     {
-        public int ModuleId { get; set; }
-        public string Name { get; set; }
-        public string ControlFile { get; set; }
-        public string ErrorFile { get; set; }
+        private string _partialViewFilename;
+        public string ViewFilename
+        {
+            get { return _partialViewFilename; }
+            set
+            {
+                _partialViewFilename = Path.ChangeExtension(value, ".cshtml");
+            }
+        }
+        public int Id { get; set; }
+        public string ErrorFilename { get; set; }        
 
-        public string ControlPath
+        public string PartialViewUrl
         {
             get
             {
-                return string.Format("~/Modules/{0}/{1}", Name, ControlFile ?? "Index.cshtml");
+                return string.Format("~/Views/Modules/{0}/{1}", Name, ViewFilename ?? "Index.cshtml");
             }
         }
 
-        public string ErrorControlPath
+        public string ErrorViewUrl
         {
             get
             {
-                return string.Format("~/Modules/{0}/{1}", Name, ErrorFile ?? "Error.cshtml");
+                if (!string.IsNullOrEmpty(ErrorFilename))
+                {
+                    return string.Format("~/Views/Modules/{0}/{1}", Name, ErrorFilename);
+                }
+                else
+                {
+                    return string.Format("~/Views/Shared/{0}", "Error.cshtml");
+                }                
             }
+        }
+
+        public Module()
+        {
+            ViewFilename = "Index.cshtml";
         }
     }
 }

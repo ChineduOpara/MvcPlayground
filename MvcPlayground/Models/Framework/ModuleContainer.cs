@@ -8,24 +8,25 @@ namespace MvcPlayground.Models.Framework
     public class ModuleContainer
     {
         public string ZoneName { get; set; }
-        public ModuleInstance Instance { get; set; }
-        public virtual object RetrieveModel()
+        public ModuleInstance ModuleInstance { get; set; }
+
+        public virtual object GetModel()
         {
-            return Instance;
+            return ModuleInstance;
         }
     }
 
     public class ModuleContainer<T> : ModuleContainer
     {
-        public ModuleContainer(ModuleContainer container)
-        {
-            Instance = container.Instance;
-            ZoneName = container.ZoneName;
-        }
-
         public T Entity { get; set; }
 
-        public override object RetrieveModel()
+        public ModuleContainer(ModuleContainer container)
+        {
+            ModuleInstance = container.ModuleInstance;
+            ZoneName = container.ZoneName;
+        }        
+
+        public override object GetModel()
         {
             return Entity;
         }

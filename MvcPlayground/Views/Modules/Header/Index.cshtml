@@ -1,0 +1,322 @@
+﻿<header id="scroll-header" class="scroll-header scroll-header-small">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-inverse ">
+        <ul class="nav navbar-nav">
+            <a class="navbar-brand">
+                <img src="~/Images/esp-white.png" alt="esp" /></a>
+            <li class="search col-lg-5">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button id="searchType" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="val">Products</span> <span class="caret"></span></button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" onclick="changeVal('searchType','Products'); return false;">Products</a></li>
+                            <li><a href="#" onclick="changeVal('searchType','Suppliers'); return false;">Suppliers</a></li>
+                            <li><a href="#" onclick="changeVal('searchType','Decorators'); return false;">Decorators</a></li>
+                        </ul>
+                    </div>
+                    <div class="searchables">
+                        <!-- <button class=""><i class="icon-search"></i></button> -->
+                        <button class=""><i class="icon-camera"></i></button>
+                        <button class=""><i class="icon-microphone"></i></button>
+                    </div>
+                    <input class="form-control searchinput" x-webkit-speech="x-webkit-speech" type="text">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <!-- shopping cart -->
+            <li class="dropdown shopping-cart">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <div class="badge pull-right">3</div>
+                    <i class="icon-folder-open"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-extend" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="dropdown-header">You have 4 new notifications</li>
+                </ul>
+            </li>
+            <!-- notification -->
+            <li class="dropdown alerts">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <div class="badge pull-right">3</div>
+                    <i class="icon-bell-alt"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-extend" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="dropdown-header">You have 4 new notifications</li>
+                    <li>
+                        <a tabindex="-1" href="#">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" data-src="holder.js/32x32" alt="32x32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABUElEQVRYR+2WvYuEMBDFZ0ULWSwEvzoRWy1F8N+3shE70UoQLbVSQcW9m0CWeC6HXuMVSRVC8vLyeyPjo+u6F9w4HtwAJ8AJcAKcwL8hkKYpfJshXcE0TfB9n8zZdUVRIAzDXzvHVR3SC+q6hqIowHEcmOcZmqYBz/NgWZb3uqqqkGUZ2LYNrut+NPEXnUMzyvMc2raFKIpAluX3RUgHDei6DqIoEpNomBrDdUoND53Rwf07A/iCsiwPl1NBSsYwDEiSBARBAEmSYBxHEg3OcZzVsSxrbwAP05eyqClatjbovm3bSFwoxo6zOocI1nWFOI5B0zSClAo9n89dAVJTeClG8bMuzuoQA5jXp8JDCmgG0bKIWXEs1L7vSWxVVV3SQfPEAGLETIdh2H2G1BiLFmNgL52miRQnEgqC4JLOoQjv+DXk/4ScACfACXACtxP4Aqhdh1AAs4DtAAAAAElFTkSuQmCC" style="width: 32px; height: 32px;">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><small class="pull-right">Just Now</small> Update version</h4>
+                                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque...</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="#">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" data-src="holder.js/32x32" alt="32x32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABUElEQVRYR+2WvYuEMBDFZ0ULWSwEvzoRWy1F8N+3shE70UoQLbVSQcW9m0CWeC6HXuMVSRVC8vLyeyPjo+u6F9w4HtwAJ8AJcAKcwL8hkKYpfJshXcE0TfB9n8zZdUVRIAzDXzvHVR3SC+q6hqIowHEcmOcZmqYBz/NgWZb3uqqqkGUZ2LYNrut+NPEXnUMzyvMc2raFKIpAluX3RUgHDei6DqIoEpNomBrDdUoND53Rwf07A/iCsiwPl1NBSsYwDEiSBARBAEmSYBxHEg3OcZzVsSxrbwAP05eyqClatjbovm3bSFwoxo6zOocI1nWFOI5B0zSClAo9n89dAVJTeClG8bMuzuoQA5jXp8JDCmgG0bKIWXEs1L7vSWxVVV3SQfPEAGLETIdh2H2G1BiLFmNgL52miRQnEgqC4JLOoQjv+DXk/4ScACfACXACtxP4Aqhdh1AAs4DtAAAAAElFTkSuQmCC" style="width: 32px; height: 32px;">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><small class="pull-right">5 minutes</small> Jane Smith</h4>
+                                    <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit...</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="#">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="media-object" data-src="holder.js/32x32" alt="32x32" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABUElEQVRYR+2WvYuEMBDFZ0ULWSwEvzoRWy1F8N+3shE70UoQLbVSQcW9m0CWeC6HXuMVSRVC8vLyeyPjo+u6F9w4HtwAJ8AJcAKcwL8hkKYpfJshXcE0TfB9n8zZdUVRIAzDXzvHVR3SC+q6hqIowHEcmOcZmqYBz/NgWZb3uqqqkGUZ2LYNrut+NPEXnUMzyvMc2raFKIpAluX3RUgHDei6DqIoEpNomBrDdUoND53Rwf07A/iCsiwPl1NBSsYwDEiSBARBAEmSYBxHEg3OcZzVsSxrbwAP05eyqClatjbovm3bSFwoxo6zOocI1nWFOI5B0zSClAo9n89dAVJTeClG8bMuzuoQA5jXp8JDCmgG0bKIWXEs1L7vSWxVVV3SQfPEAGLETIdh2H2G1BiLFmNgL52miRQnEgqC4JLOoQjv+DXk/4ScACfACXACtxP4Aqhdh1AAs4DtAAAAAElFTkSuQmCC" style="width: 32px; height: 32px;">
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><small class="pull-right">3 hours</small> New comment</h4>
+                                    <p>Tellus ac cursus commodo, tortor mauris condimentum nibh...</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="dropdown-footer">
+                        <a tabindex="-1" href="#"><i class="aweso-angle-right pull-right"></i>See all notifications</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- /notification -->
+
+            <!-- task -->
+            <li class="dropdown tasks">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <div class="badge pull-right">5</div>
+                    <i class="icon-tasks"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-extend" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="dropdown-header">You have 6 tasks</li>
+                    <li>
+                        <a tabindex="-1" href="#">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h4 class="task-label"><small class="pull-right task-status">20%</small> upload some file</h4>
+                                    <div class="progress progress-info">
+                                        <div class="bar" style="width: 20%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="#">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h4 class="task-label"><small class="pull-right task-status">40%</small>  <span class="text-error">paused!</span> do something</h4>
+                                    <div class="progress progress-warning">
+                                        <div class="bar" style="width: 40%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="#">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h4 class="task-label"><small class="pull-right task-status">60%</small> do another task</h4>
+                                    <div class="progress progress-info">
+                                        <div class="bar" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a tabindex="-1">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h4 class="task-label"><small class="pull-right task-status">80%</small> <span class="text-error">failed!</span> upload some file</h4>
+                                    <div class="progress progress-danger">
+                                        <div class="bar" style="width: 80%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="#">
+                            <div class="media">
+                                <div class="media-body">
+                                    <h4 class="task-label"><small class="pull-right task-status">100%</small> <span class="text-success">done!</span> another task</h4>
+                                    <div class="progress progress-success">
+                                        <div class="bar" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="dropdown-footer">
+                        <a tabindex="-1" href="#"><i class="aweso-angle-right pull-right"></i>See all tasks</a>
+                    </li>
+                </ul>
+            </li>
+            <!-- /task -->
+
+            <!-- account -->
+            <li class="dropdown user">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <img src="http://media-social.s-msn.com/images/blogs/00120065-0000-0000-0000-000000000000_00000065-075e-0000-0000-000000000000_20130912191305_msn.breakingbad.jpg" alt="Walter White" />
+                    <i class="icon-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                    <li>
+                        @Html.ActionLink("Profile", "Details", "Customer", new { Id = 1 }, new { tabIndex = "-1" })
+                        @*<a tabindex="-1" href="/User/Details/1">Profile</a>*@
+                    </li>
+                    <li><a tabindex="-1" href="#">Activity</a></li>
+                    <li><a tabindex="-1" href="page-inbox.html">Inbox</a></li>
+                    <li class="divider"></li>
+                    <li><a tabindex="-1" href="page-login.html">Logout</a></li>
+                </ul>
+            </li>
+            <!-- /account -->
+        </ul>
+    </div>
+    <div class="navbar navbar-inverse navbar-fixed-top navbar-under navbar-square">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Searches
+                        <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" data-dropdown="no-propagation" role="menu" aria-labelledby="dropdownMenu">
+                    <li><a href="#">Find a Product</a></li>
+                    <li><a href="#">Find a Supplier</a></li>
+                    <li><a href="#">Recent Searches</a></li>
+                    <li><a href="#">My Saved Searches</a></li>
+                    <li><a href="#">Manage My Searches</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Top 20 Searches
+                        <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu" data-dropdown="no-propagation" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T17_T41" value="MUGS" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=MUGS','MUGS', true);" class="">MUGS</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T18_T42" value="PEN" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=PEN','PEN', true);" class="">PEN</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T19_T43" value="KOOZIE" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=KOOZIE','KOOZIE', true);" class="">KOOZIE</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T20_T44" value="HAND SANITIZER" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=HAND+SANITIZER','HAND SANITIZER', true);" class="">HAND SANITIZER</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T21_T45" value="LANYARD" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=LANYARD','LANYARD', true);" class="">LANYARD</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T22_T46" value="HORSE STRESS RELIEVER" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=HORSE+STRESS+RELIEVER','HORSE STRESS RELIEVER', true);" class="">HORSE STRESS RELIEVER</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T23_T47" value="IPOD" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=IPOD','IPOD', true);">IPOD</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T24_T48" value="2 SIDES" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=2+SIDES','2 SIDES', true);">2 SIDES</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T25_T49" value="3 RING BINDER" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=3+RING+BINDER','3 RING BINDER', true);" class="">3 RING BINDER</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T26_T50" value="NIFE" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=NIFE','NIFE', true);" class="">NIFE</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T27_T51" value="MUG" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=MUG','MUG', true);" class="">MUG</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T28_T52" value="PURPLE MUGS" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=PURPLE+MUGS','PURPLE MUGS', true);" class="">PURPLE MUGS</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T29_T53" value="SILKSCREEN" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=SILKSCREEN','SILKSCREEN', true);">SILKSCREEN</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T30_T54" value="101" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=101','101', true);" class="">101</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T31_T55" value="BLUE WATERPROOF LONG SLEEVE T-SHIRT" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=BLUE+WATERPROOF+LONG+SLEEVE+T-SHIRT','BLUE WATERPROOF LONG SLEEVE T-SHIRT', true);" class="">BLUE WATERPROOF LONG SLEEVE T-SHIRT</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T32_T56" value="COFFEE" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=COFFEE','COFFEE', true);" class="">COFFEE</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T33_T57" value="CALENDER" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=CALENDER','CALENDER', true);" class="">CALENDER</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T34_T58" value="M&amp;M" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=M%26M','M&amp;M', true);" class="">M&amp;M</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T35_T59" value="HANES" onclick="onATLItemClick('http://local-espweb.asicentral.com/Default.aspx?appCode=WESP&amp;appVersion=3.5.0&amp;page=ProductResults&amp;referrerPage=ESPHomepage&amp;refPgId=111686&amp;PCUrl=1&amp;SearchTerms=HANES','HANES', true);" class="">HANES</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Top Sellers
+                        <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu top-sellers" data-dropdown="no-propagation" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T17_T61" value="201258" title="asi/39540 The Beistle Co" onclick="mnuLaunchTopSeller('201258','39540');">39540</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T18_T62" value="201262" title="asi/42424 Bullet" onclick="mnuLaunchTopSeller('201262','42424');" class="">42424</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T19_T63" value="201261" title="asi/44888 Brighter Promotions Inc" onclick="mnuLaunchTopSeller('201261','44888');">44888</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T20_T64" value="201265" title="asi/47759 Crystal D" onclick="mnuLaunchTopSeller('201265','47759');">47759</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T21_T65" value="201246" title="asi/55056 Force 2000 Athletic Apparel" onclick="mnuLaunchTopSeller('201246','55056');">55056</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T22_T66" value="201260" title="asi/58683 Guru Sportswear" onclick="mnuLaunchTopSeller('201260','58683');">58683</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T23_T67" value="201267" title="asi/66887 Leed's" onclick="mnuLaunchTopSeller('201267','66887');">66887</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T24_T68" value="201254" title="asi/85670 J C Schultz Enterprises Inc" onclick="mnuLaunchTopSeller('201254','85670');">85670</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T25_T69" value="201268" title="asi/98360 WOWLine" onclick="mnuLaunchTopSeller('201268','98360');">98360</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T26_T70" value="201304" title="asi/42424 Bullet" onclick="mnuLaunchTopSeller('201304','AlexTest 11:51am');">AlexTest 11:51am</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T27_T71" value="201349" title="asi/66887 Leed's" onclick="mnuLaunchTopSeller('201349','Beer Mug (c)');">Beer Mug (c)</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T28_T72" value="201348" title="asi/66887 Leed's" onclick="mnuLaunchTopSeller('201348','Beer Mug (j)');">Beer Mug (j)</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T29_T73" value="201398" title="asi/63344 Jetline" onclick="mnuLaunchTopSeller('201398','Dropped Product Test');">Dropped Product Test</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T30_T74" value="201240" title="asi/79370 Premium" onclick="mnuLaunchTopSeller('201240','Footballs');">Footballs</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T31_T75" value="201235" title="asi/47971 Custom Printing II LTD" onclick="mnuLaunchTopSeller('201235','Igloo');">Igloo</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T32_T76" value="201239" title="asi/71920 Moderne Glass Company Inc" onclick="mnuLaunchTopSeller('201239','Jars');">Jars</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T33_T77" value="201237" title="asi/40595 BizPins Inc" onclick="mnuLaunchTopSeller('201237','KEY CAPS');">KEY CAPS</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T34_T78" value="201238" title="asi/66887 Leed's" onclick="mnuLaunchTopSeller('201238','KITES');">KITES</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T35_T79" value="201361" title="asi/57655 STOPNGO Line" onclick="mnuLaunchTopSeller('201361','Koolers');">Koolers</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T36_T80" value="201350" title="asi/66887 Leed's" onclick="mnuLaunchTopSeller('201350','Oval Mug (k)');" class="">Oval Mug (k)</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T37_T81" value="201153" title="asi/34350 All Star Industries" onclick="mnuLaunchTopSeller('201153','Plagues');" class="">Plagues</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T38_T82" value="204909" title="asi/8309 Rockleigh Industries Inc" onclick="mnuLaunchTopSeller('204909','Sample Name');" class="">Sample Name</a></li>
+                    <li class="ui-menu-item ellipsis"><a href="javascript:void(0);" id="T3_T9_T39_T83" value="201236" title="asi/93986 Visions Awards" onclick="mnuLaunchTopSeller('201236','Walk The Talk');">Walk The Talk</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+<ul id="gn-menu" class="gn-menu-main">
+    <li class="gn-trigger">
+        <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+        <nav class="gn-menu-wrapper">
+            <div class="gn-scroller">
+                <ul class="gn-menu">
+                    <!--<li class="gn-search-item">
+							<input placeholder="Search" type="search" class="gn-search">
+							<a class="gn-icon gn-icon-search"><span>Search</span></a>
+						</li>-->
+                    <li>
+                        <a href="/">
+                            <i class="icon-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>                        
+                        <a href="/Product">
+                            <i class="icon-search"></i>
+                            <span>Research</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Customer">
+                            <i class="icon-group"></i>
+                            <span>Customers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Order">
+                            <i class="icon-inbox"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/presentations">
+                            <i class="icon-file"></i>
+                            <span>Presentations</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#/websites">
+                            <i class="icon-sitemap"></i>
+                            <span>Websites</span>
+                        </a>
+                    </li>
+                    <!-- <li><a class="gn-icon gn-icon-help">Help</a></li> -->
+                </ul>
+            </div>
+            <!-- /gn-scroller -->
+        </nav>
+    </li>
+</ul>
